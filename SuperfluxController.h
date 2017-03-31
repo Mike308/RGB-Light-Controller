@@ -10,9 +10,7 @@
 	#include "WProgram.h"
 #endif
 
-#define R 1
-#define G 2
-#define B 3 
+
 
 class SuperfluxControllerClass
 {
@@ -33,10 +31,11 @@ class SuperfluxControllerClass
 		}tAnimation;
 	
 	
-	void init();
+	void init(uint8_t r, uint8_t g, uint8_t b);
 	void setHSVColor(uint16_t h, uint16_t s, uint16_t v);
 	void setRGBColor(uint8_t r, uint8_t g, uint8_t b);
 	void setAnimation(tAnimation * animation, unsigned long currentMills);
+	void ATCommandsService(String str);
 	
 	
 	
@@ -46,6 +45,9 @@ private:
 	void circleOfColor(tAnimation *animation, unsigned long currentMills);
 	void switchingColors(tAnimation *animation, unsigned long currentMills);
 	enum animations {circleOfColorEnum,switchingColorsEnum};
+	uint8_t rPin;
+	uint8_t gPin;
+	uint8_t bPin;
 		
 
 	

@@ -135,6 +135,46 @@ void SuperfluxControllerClass::setAnimation(tAnimation * animation, unsigned lon
 	
 }
 
+void SuperfluxControllerClass::ATCommandsService(String str){
+	
+	char buf[256];
+	
+	str.toCharArray(buf,str.length());
+	
+	char * atCommand = strtok(buf,"=");
+	
+	
+	 
+	if (strcmp("AT+RGB",atCommand)==0){
+		
+		char * rStr = strtok(NULL,",");
+		char * gStr = strtok(NULL,",");
+		char * bStr = strtok(NULL,",");
+		Serial.println(gStr);
+		uint8_t r = atoi(rStr);
+		uint8_t g = atoi(gStr);
+		uint8_t b = atoi(bStr);
+		setRGBColor(r,g,b);	
+		
+	}else if (strcmp("AT+HSV",atCommand)==0){
+		
+		char * hStr = strtok(NULL,",");
+		char * sStr = strtok(NULL,",");
+		char * vStr = strtok(NULL,",");
+		
+		uint16_t h = atoi(hStr);
+		uint16_t s = atoi(sStr);
+		uint16_t v = atoi(vStr);
+		setHSVColor(h,s,v);
+		
+		
+		
+	}
+	
+	
+	
+}
+
 
 
 
