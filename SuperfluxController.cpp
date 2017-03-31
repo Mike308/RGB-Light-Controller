@@ -67,18 +67,18 @@ void SuperfluxControllerClass::setHSVColor(uint16_t h, uint16_t s, uint16_t v){
 	green = (green * v)/100;
 	blue = (blue * v)/100;
 	
-	analogWrite(R,red);
-	analogWrite(G,green);
-	analogWrite(B,blue);
+	analogWrite(rPin,red);
+	analogWrite(gPin,green);
+	analogWrite(bPin,blue);
 
 	
 }
 
 void SuperfluxControllerClass::setRGBColor(uint8_t r, uint8_t g, uint8_t b){
 	
-	analogWrite(R,r);
-	analogWrite(G,g);
-	analogWrite(B,b);
+	analogWrite(rPin,r);
+	analogWrite(gPin,g);
+	analogWrite(bPin,b);
 }
 
 
