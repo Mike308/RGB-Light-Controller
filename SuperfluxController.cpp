@@ -122,12 +122,12 @@ void SuperfluxControllerClass::switchingColors(tAnimation *animation, unsigned l
 
 void SuperfluxControllerClass::setAnimation(tAnimation * animation, unsigned long currentMills){
 	
-	if (animation->mode == animations.circleOfColorEnum){
+	if (animation->mode == animations::circleOfColorEnum){
 		
 		circleOfColor(animation,currentMills);
 		
 		
-	}else if (animation->mode == animations.switchingColorsEnum){
+	}else if (animation->mode == animations::switchingColorsEnum){
 		
 		switchingColors(animation,currentMills);
 		
