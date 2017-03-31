@@ -29,22 +29,24 @@ class SuperfluxControllerClass
 			uint8_t step;
 			
 		}tAnimation;
+		
+	tAnimation animation;
 	
 	
 	void init(uint8_t r, uint8_t g, uint8_t b);
 	void setHSVColor(uint16_t h, uint16_t s, uint16_t v);
 	void setRGBColor(uint8_t r, uint8_t g, uint8_t b);
 	void setAnimation(tAnimation * animation, unsigned long currentMills);
-	void ATCommandsService(String str);
+	void ATCommandsService(String str, tAnimation * animation);
 	
 	
 	
 	
 private:
 	
-	void circleOfColor(tAnimation *animation, unsigned long currentMills);
-	void switchingColors(tAnimation *animation, unsigned long currentMills);
-	enum animations {circleOfColorEnum,switchingColorsEnum};
+	void circleOfColor(tAnimation * animation, unsigned long currentMills);
+	void switchingColors(tAnimation * animation, unsigned long currentMills);
+	enum animations {circleOfColorEnum,switchingColorsEnum,animationOff};
 	uint8_t rPin;
 	uint8_t gPin;
 	uint8_t bPin;
