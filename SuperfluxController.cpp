@@ -92,6 +92,25 @@ void SuperfluxControllerClass::circleOfColor(tAnimation *animation, unsigned lon
 	
 }
 
+void SuperfluxControllerClass::switchingColors(tAnimation *animation, unsigned long currentMills){
+	
+	static unsigned long previousMills = 0;
+	
+	if (currentMills-previousMills>=animation->speed){
+		
+		previousMills = currentMills;
+		uint8_t r = random(256);
+		uint8_t g = random(256);
+		uint8_t b = random(256);
+		
+		setRGBColor(r,g,b);
+		
+		
+	}
+	
+	
+}
+
 
 
 

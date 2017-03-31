@@ -30,13 +30,13 @@ class SuperfluxControllerClass
 	void init();
 	void setHSVColor(uint16_t h, uint16_t s, uint16_t v);
 	void setRGBColor(uint8_t r, uint8_t g, uint8_t b);
-	void setAnimation(tAnimation * animation);
+	void setAnimation(tAnimation * animation, unsigned long currentMills);
 	enum animations {circleOfColorEnum,switchingColorsEnum};
 	
 private:
 	
-	void circleOfColor(tAnimation *animation);
-	void switchingColors(tAnimation *animation);
+	void circleOfColor(tAnimation *animation, unsigned long currentMills);
+	void switchingColors(tAnimation *animation, unsigned long currentMills);
 	
 	
 
