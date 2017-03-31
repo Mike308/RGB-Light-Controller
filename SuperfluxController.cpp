@@ -73,6 +73,30 @@ void SuperfluxControllerClass::setRGBColor(uint8_t r, uint8_t g, uint8_t b){
 }
 
 
+void SuperfluxControllerClass::circleOfColor(tAnimation *animation, unsigned long currentMills){
+	
+		static int hue = 0;
+		static unsigned long previousMills = 0;
+		if(hue<360){
+			if(currentMills-previousMills>=animation->speed){
+				previousMills = currentMills;
+				setHSVColor(hue,100,100);
+				hue += animation->step;
+				
+				
+			}
+			}else{
+			
+			hue = 0;
+		}
+	
+}
+
+
+
+
+
+
 
 
 SuperfluxControllerClass SuperfluxController;
