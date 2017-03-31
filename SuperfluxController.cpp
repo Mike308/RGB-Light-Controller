@@ -4,8 +4,17 @@
 
 #include "SuperfluxController.h"
 
-void SuperfluxControllerClass::init()
-{
+
+void SuperfluxControllerClass::init(uint8_t r,uint8_t g,uint8_t b){
+
+	pinMode(r,OUTPUT);
+	pinMode(g,OUTPUT);
+	pinMode(b,OUTPUT);
+	
+	rPin = r;
+	gPin = g;
+	bPin = b;
+
 
 
 }
