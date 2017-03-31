@@ -4,6 +4,9 @@
 #define G 3
 #define B 6
 
+
+
+
 String receiveString = " ";
 bool checkIfStringReceive = false;
 
@@ -31,12 +34,17 @@ void loop()
   
   if (checkIfStringReceive){
 	  
-	  controller.ATCommandsService(receiveString);
+	  controller.ATCommandsService(receiveString,&controller.animation);
 	  receiveString = "";
 	  checkIfStringReceive = false;
 	  
 	  
+	  
   }
+  
+  controller.setAnimation(&controller.animation,currentMills);
+  
+  
   
 
 }
