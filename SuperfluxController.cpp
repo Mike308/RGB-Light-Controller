@@ -131,11 +131,15 @@ void SuperfluxControllerClass::setAnimation(tAnimation * animation, unsigned lon
 		
 		switchingColors(animation,currentMills);
 		
+	}else if (animation->mode == animations::animationOff){
+		
+		//setRGBColor(0,0,0);
+		
 	}
 	
 }
 
-void SuperfluxControllerClass::ATCommandsService(String str){
+void SuperfluxControllerClass::ATCommandsService(String str, tAnimation * animation){
 	
 	char buf[256];
 	
@@ -155,6 +159,8 @@ void SuperfluxControllerClass::ATCommandsService(String str){
 		uint8_t g = atoi(gStr);
 		uint8_t b = atoi(bStr);
 		setRGBColor(r,g,b);	
+		animation->mode = animations::animationOff;
+		
 		
 	}else if (strcmp("AT+HSV",atCommand)==0){
 		
@@ -166,8 +172,22 @@ void SuperfluxControllerClass::ATCommandsService(String str){
 		uint16_t s = atoi(sStr);
 		uint16_t v = atoi(vStr);
 		setHSVColor(h,s,v);
+		animation->mode = animations::animationOff;
 		
 		
+		
+	}else if (strcmp("AT+ANIM",atCommand)==0){
+		
+		char * modeStr =  strtok(NULL,",");
+		char * speedStr = strtok(NULL,",");
+		char * stepStr = strtok(NULL,",");
+		
+		animation->mode = atoi(modeStr);
+		animation->speed = atoi(speedStr);
+		animation->step = atoi(stepStr);
+		
+		
+			
 		
 	}
 	
