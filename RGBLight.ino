@@ -7,7 +7,7 @@
 
 
 
-String receiveString = " ";
+String receiveString = "";
 bool checkIfStringReceive = false;
 
 SuperfluxControllerClass controller;
