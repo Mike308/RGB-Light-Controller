@@ -139,13 +139,13 @@ void SuperfluxControllerClass::setAnimation(tAnimation * animation, unsigned lon
 	
 }
 
-void SuperfluxControllerClass::ATCommandsService(String str, tAnimation * animation){
+void SuperfluxControllerClass::ATCommandsService(String str, tAnimation * animation, float temperature){
 	
 	char buf[256];
 	
 	str.toCharArray(buf,str.length());
 	
-	char * atCommand = strtok(buf,"=");
+	char * atCommand = strtok(buf,"=,?");
 	
 	
 	 
@@ -188,6 +188,10 @@ void SuperfluxControllerClass::ATCommandsService(String str, tAnimation * animat
 		
 		
 			
+		
+	}else if (strcmp("AT+TEMP",atCommand)==0){
+		
+		Serial.println(temperature);
 		
 	}
 	
