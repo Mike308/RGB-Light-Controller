@@ -37,7 +37,7 @@ class SuperfluxControllerClass
 	void setHSVColor(uint16_t h, uint16_t s, uint16_t v);
 	void setRGBColor(uint8_t r, uint8_t g, uint8_t b);
 	void setAnimation(tAnimation * animation, unsigned long currentMills);
-	void ATCommandsService(String str, tAnimation * animation);
+	void ATCommandsService(String str, tAnimation * animation, float temperature);
 	
 	
 	
