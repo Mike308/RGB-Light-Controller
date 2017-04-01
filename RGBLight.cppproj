@@ -28,15 +28,15 @@
     <BootSegment>0</BootSegment>
     <AsfFrameworkConfig>
       <framework-data>
-  <options />
-  <configurations />
-  <files />
-  <documentation help="" />
-  <offline-documentation help="" />
-  <dependencies>
-    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.22.0" />
-  </dependencies>
-</framework-data>
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.22.0" />
+        </dependencies>
+      </framework-data>
     </AsfFrameworkConfig>
     <preserveEEPROM>true</preserveEEPROM>
   </PropertyGroup>
@@ -116,6 +116,11 @@
 </AvrGccCpp>
     </ToolchainSettings>
     <VMSETTING_IncludePaths>E:/Program Files (x86)/Arduino/libraries;E:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries;C:/Users/Mike/Documents/Arduino/libraries;E:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;E:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/eightanaloginputs;../../../RGBLight;E:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/;E:/Program Files (x86)/Arduino/hardware/tools/avr//avr/include/avr/;E:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include;</VMSETTING_IncludePaths>
+    <VisualMicroSettings>
+      <VisualMicroSettings xmlns="">
+        <arduino.upload.port>COM2</arduino.upload.port>
+      </VisualMicroSettings>
+    </VisualMicroSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
@@ -193,6 +198,11 @@
 </AvrGccCpp>
     </ToolchainSettings>
     <VMSETTING_IncludePaths>E:/Program Files (x86)/Arduino/libraries;E:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries;C:/Users/Mike/Documents/Arduino/libraries;E:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;E:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/eightanaloginputs;../../../RGBLight;E:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/;E:/Program Files (x86)/Arduino/hardware/tools/avr//avr/include/avr/;E:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include;</VMSETTING_IncludePaths>
+    <VisualMicroSettings>
+      <VisualMicroSettings xmlns="">
+        <arduino.upload.port>COM2</arduino.upload.port>
+      </VisualMicroSettings>
+    </VisualMicroSettings>
   </PropertyGroup>
   <ItemGroup>
     <None Include="RGBLight.ino">
